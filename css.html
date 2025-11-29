@@ -1,0 +1,97 @@
+/* 全体フォント */
+body {
+  margin: 0;
+  font-family: "Noto Sans JP", "Hiragino Sans", "Yu Gothic",
+    system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background: #111;
+}
+
+/* スクロール枠 */
+.purpose-wrapper {
+  width: 100%;
+  max-width: 640px;
+  height: 560px;
+  margin: 0 auto;
+  padding: 40px 32px;
+  border-radius: 24px;
+  box-sizing: border-box;
+  background: #2f2725;
+  overflow-y: auto;
+  color: #ffffff;
+}
+
+/* コンテンツ */
+.purpose-inner {
+  position: relative;
+}
+
+/* ✔ 修正版：背景 PURPOSE */
+.purpose-bg-title {
+  position: absolute;
+  top: -30px;            /* ← もっと上に押し上げる */
+  left: 0px;             /* ← 左に固定 */
+  font-size: 78px;      /* Canvaのバランスに近づけた */
+  font-weight: 800;
+  letter-spacing: 0.18em;
+
+  /* ✔ Canva に近い“超薄い黒” */
+  color: #3e3634;
+
+  /* スクロールやクリックの邪魔しない */
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+}
+
+/* ラベル */
+.purpose-label {
+  position: relative;
+  top: 70px;  
+  z-index: 2;
+  margin: 0 0 108px 0;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+/* メイン見出し */
+.purpose-main {
+  position: relative;
+  z-index: 2;
+  margin: 0 0 34px 0;
+  font-size: 50px;
+  line-height: 1.3;
+  font-weight: 800;
+  background: linear-gradient(135deg, #f9a8d4, #fcd5ce, #fff5c7);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+/* 本文 */
+.purpose-text {
+  position: relative;
+  z-index: 2;
+  font-size: 16px;
+  line-height: 2;
+  color: #ffffff;
+}
+
+/* スマホ対応 */
+@media (max-width: 480px) {
+  .purpose-wrapper {
+    height: 500px;
+    padding: 32px 20px;
+  }
+  .purpose-bg-title {
+    font-size: 110px;
+    top: -20px;
+    left: 0;
+  }
+  .purpose-main {
+    font-size: 34px;
+  }
+  .purpose-text {
+    font-size: 14px;
+  }
+}
