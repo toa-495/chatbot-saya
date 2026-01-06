@@ -8,26 +8,13 @@
 
   <style>
     :root{
-      /* パステル基調（温かい・安心） */
-      --bg1:#fff7fb;      /* ほんのりピンク */
-      --bg2:#f3fbff;      /* ほんのり水色 */
-      --card:#ffffffcc;   /* 半透明ホワイト */
-      --text:#2b2b2b;
-      --muted:#666;
-
-      /* 目立つ主ボタン（やわらかい） */
-      --primary1:#a7f3d0; /* ミント */
-      --primary2:#93c5fd; /* スカイ */
-      --primaryText:#0b1b2a;
-
-      /* サブボタン */
-      --subBg:#fff;
-      --subBorder:#e7e7ef;
-
+      --bg1:#fff7fb; --bg2:#f3fbff;
+      --card:#ffffffcc; --text:#2b2b2b; --muted:#666;
+      --primary1:#a7f3d0; --primary2:#93c5fd; --primaryText:#0b1b2a;
+      --subBg:#fff; --subBorder:#e7e7ef;
       --shadow: 0 12px 30px rgba(20, 20, 40, 0.10);
       --radius: 18px;
     }
-
     body{
       margin:0;
       font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans JP", sans-serif;
@@ -38,67 +25,36 @@
         linear-gradient(180deg, #ffffff, #f7f7ff);
       min-height: 100vh;
     }
-
-    .wrap{
-      min-height: 100vh;
-      display: grid;
-      place-items: center;
-      padding: 22px;
-      box-sizing: border-box;
-    }
-
+    .wrap{min-height:100vh;display:grid;place-items:center;padding:22px;box-sizing:border-box;}
     .card{
-      width: min(560px, 100%);
-      background: var(--card);
-      border: 1px solid rgba(230,230,245,0.9);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
+      width:min(560px,100%);
+      background:var(--card);
+      border:1px solid rgba(230,230,245,0.9);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
       backdrop-filter: blur(8px);
-      padding: 18px 18px 16px;
+      padding:18px 18px 16px;
     }
-
-    .title{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      margin: 0 0 10px 0;
-      font-weight: 800;
-      font-size: 18px;
-      letter-spacing: .02em;
-    }
-
+    .title{display:flex;align-items:center;gap:10px;margin:0 0 10px 0;font-weight:800;font-size:18px;}
     .badge{
-      width: 34px;
-      height: 34px;
-      border-radius: 12px;
-      display:grid;
-      place-items:center;
+      width:34px;height:34px;border-radius:12px;display:grid;place-items:center;
       background: linear-gradient(135deg, #ffd6e8, #d9f2ff);
-      border: 1px solid rgba(220,220,240,0.9);
-      box-shadow: 0 8px 18px rgba(40,40,80,0.08);
-      font-size: 18px;
+      border:1px solid rgba(220,220,240,0.9);
+      box-shadow:0 8px 18px rgba(40,40,80,0.08);
+      font-size:18px;
     }
-
-    .msg{
-      margin: 0 0 14px 0;
-      color: var(--muted);
-      line-height: 1.75;
-      font-size: 14.5px;
-    }
-
+    .msg{margin:0 0 14px 0;color:var(--muted);line-height:1.75;font-size:14.5px;}
     .btn{
-      width: 100%;
-      border-radius: 14px;
-      padding: 13px 14px;
-      border: 1px solid transparent;
-      font-size: 16px;
-      cursor: pointer;
-      user-select: none;
+      width:100%;
+      border-radius:14px;
+      padding:13px 14px;
+      border:1px solid transparent;
+      font-size:16px;
+      cursor:pointer;
+      user-select:none;
       transition: transform .04s ease, box-shadow .12s ease, filter .12s ease;
     }
-    .btn:active{ transform: translateY(1px); }
-
-    /* 主ボタン：目立たせる演出（発光っぽい影 + グラデ） */
+    .btn:active{transform: translateY(1px);}
     .btnPrimary{
       background: linear-gradient(135deg, var(--primary1), var(--primary2));
       color: var(--primaryText);
@@ -106,52 +62,58 @@
       box-shadow: 0 14px 26px rgba(120, 170, 255, 0.22);
       border: 1px solid rgba(140, 180, 255, 0.35);
     }
-    .btnPrimary:hover{ filter: brightness(1.02); }
-
+    .btnPrimary:hover{filter: brightness(1.02);}
     .btnSub{
-      margin-top: 10px;
+      margin-top:10px;
       background: var(--subBg);
-      color: #333;
-      border: 1px solid var(--subBorder);
-      box-shadow: 0 10px 18px rgba(20,20,40,0.06);
-      font-weight: 700;
+      color:#333;
+      border:1px solid var(--subBorder);
+      box-shadow:0 10px 18px rgba(20,20,40,0.06);
+      font-weight:700;
     }
-
     .toast{
-      position: fixed;
-      left: 50%;
-      bottom: 16px;
-      transform: translateX(-50%);
+      position:fixed;left:50%;bottom:16px;transform:translateX(-50%);
       background: rgba(255,255,255,0.92);
-      color: #2b2b2b;
-      border: 1px solid rgba(220,220,235,0.95);
-      border-radius: 12px;
-      padding: 10px 12px;
-      box-shadow: 0 14px 26px rgba(20,20,40,0.12);
-      display: none;
-      font-size: 13px;
+      color:#2b2b2b;
+      border:1px solid rgba(220,220,235,0.95);
+      border-radius:12px;
+      padding:10px 12px;
+      box-shadow:0 14px 26px rgba(20,20,40,0.12);
+      display:none;font-size:13px;
     }
-
-    @media (max-width: 420px){
-      .card{ padding: 16px 14px 14px; }
-      .msg{ font-size: 14px; }
-      .btn{ font-size: 15.5px; }
+    @media (max-width:420px){
+      .card{padding:16px 14px 14px;}
+      .msg{font-size:14px;}
+      .btn{font-size:15.5px;}
     }
   </style>
 </head>
 
 <body>
 <script>
-  // ★ここだけ更新：Gemini共有URL
+  // ★毎回ここだけ更新：Gemini共有URL
   const TARGET_URL = "https://gemini.google.com/share/66b226725889";
 
   const ua = navigator.userAgent || "";
-  // LINE判定は“広め”に（環境で揺れるので）
-  const isLINEish =
-    /Line|LINE|LIFF/i.test(ua) ||
-    (ua.includes("NAVER") && /Android|iPhone|iPad/i.test(ua));
 
-  const isAndroid = /Android/i.test(ua);
+  // ---- 判定：PCは全部OK、スマホはSafari/Chrome以外を弾く ----
+  const isMobile = /Android|iPhone|iPad|iPod/i.test(ua);
+
+  // iOS Chrome は "CriOS" が入る。Safari は Safari が入るが、Chrome/Firefox等は別印が入る。
+  const isIOS = /iPhone|iPad|iPod/i.test(ua);
+
+  // Safari判定（iOS/AndroidのSafari相当は基本iOSのみ）
+  const isSafari =
+    isIOS &&
+    /Safari/i.test(ua) &&
+    !/CriOS|FxiOS|EdgiOS|OPiOS|GSA/i.test(ua);
+
+  // Chrome判定
+  const isChrome =
+    (isIOS && /CriOS/i.test(ua)) ||
+    (!isIOS && /Chrome\/|Chromium\//i.test(ua) && !/Edg|OPR|SamsungBrowser/i.test(ua));
+
+  const allowOnMobile = (isSafari || isChrome);
 
   function toast(msg){
     const el = document.getElementById("toast");
@@ -162,7 +124,7 @@
   }
 
   function makeChromeIntent(url){
-    // Android向け：Chrome intent（LINE側がブロックする場合あり）
+    // Android向け：Chrome intent（端末/アプリ側でブロックされることもある）
     const u = new URL(url);
     const fallback = encodeURIComponent(url);
     return `intent://${u.host}${u.pathname}${u.search}#Intent;scheme=https;package=com.android.chrome;S.browser_fallback_url=${fallback};end`;
@@ -181,22 +143,23 @@
   }
 
   function openExternal(){
-    // LINE以外はこの画面を経由しない（下で即リダイレクトする）
-    // LINE内では「外部ブラウザで開く」を“試みる”
-    if (isAndroid){
+    const isAndroid = /Android/i.test(ua);
+    if (isAndroid) {
       location.href = makeChromeIntent(TARGET_URL);
       return;
     }
-    // iOSは強制不可なので、新規タブを試す（失敗してもコピーで逃げられる）
+    // iOSは強制不可なので、新規タブを試す（ダメならコピーで）
     window.open(TARGET_URL, "_blank", "noopener,noreferrer");
   }
 
-  // ✅ LINEっぽくなければ即Geminiへ（これまで通り）
-  if (!isLINEish) {
+  // ✅ ルール適用
+  // PC → 何でもOKで即リダイレクト
+  // スマホ → Safari/Chromeのみ即リダイレクト、それ以外は案内画面
+  if (!isMobile || allowOnMobile) {
     location.replace(TARGET_URL);
   }
 
-  // LINEっぽい場合のみ、この案内画面を表示（自動遷移しない）
+  // 案内画面を出す場合だけ、関数を公開
   window.__APP__ = { openExternal, copyLink };
 </script>
 
@@ -225,6 +188,5 @@
 </div>
 
 <div class="toast" id="toast"></div>
-
 </body>
 </html>
